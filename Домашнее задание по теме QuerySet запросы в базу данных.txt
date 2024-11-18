@@ -1,0 +1,14 @@
+from task1.models import Buyer
+from task1.models import Game
+Buyer.objects.create(name='Nikita', balance=15000, age = 30)
+Buyer.objects.create(name='Leha', balance=10000, age = 28)
+Buyer.objects.create(name='Misha', balance=1000, age = 17)
+Game.objects.create(title='Dota2', cost = 1000, size = 40, description='Legendary game', age_limited = False)
+Game.objects.create(title='Dota2', cost = 1000, size = 40, description='Legendary game', age_limited = False)
+a = Game.objects.get(id=2)
+a.delete()
+Game.objects.create(title='GTA5', cost = 5000, size = 50, description='Nice game', age_limited = True)
+Game.objects.create(title='Metro', cost = 7000, size = 43, description='Good game', age_limited = True)
+Game.objects.get(id=1).buyer.set((1,2,3))
+Game.objects.get(id=3).buyer.set((1,2))
+Game.objects.get(id=4).buyer.set((1))
